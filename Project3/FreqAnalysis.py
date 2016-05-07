@@ -78,6 +78,7 @@ plt.plot(abs(Y), 'm')
 # display the plot
 output_file("mpl_subplot.html", title="mpl_subplot.py example")
 show(mpl.to_bokeh())
+
 #plt.show()
 '''
 # label the axes
