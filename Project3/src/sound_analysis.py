@@ -1,47 +1,37 @@
 from libraries import *
 
-# create lines.html
-output_file("Audio.html", title="Signal Wave")
 
-def returnNewFigure():
+def returnNewFigure(title):
     # create a new plot with a title and axis labels
-    return figure(title="Simple Signal Wave", x_axis_label='time', y_axis_label='amplitude', toolbar_location="above",
+    return figure(title=title, x_axis_label='time', y_axis_label='amplitude', toolbar_location="above",
                tools="xwheel_zoom, pan")
+
+def showPlot(title, color, x, y):
+    p = returnNewFigure(title)
+    output_file("Audio.html", title=title)
+    # add a line renderer with legend and line thickness
+    p.line(x, y, line_width=2, color=color)
+    # show the results
+    show(p)
 
 # TODO: fix everything but plotSignalWave
 #################################################
 def plotSignalWave(song_file, style):
-    p = returnNewFigure()
+
     x = []
-    print(song_file)
-    print(type(song_file))
-    print(len(song_file))
-    print(len(song_file.strip()))
     input_data = read(song_file)
     audio = input_data[1]
     x.extend(range(0,len(audio)))
 
-    #create html output file
-    output_file("Audio.html", title="Signal Wave")
-
-    color = style["color"]
-    print("color - " + style['color'])
-    print(type(color))
-    print(len(color))
-    # add a line renderer with legend and line thickness
-    p.line(x, audio, line_width=2, color=style['color'])
-
-    # show the results
-    show(p)
+    showPlot("Signal Wave", style["color"], x, audio)
 
 
 #################################################
 
 #################################################
 def plotAudioHanningWindow(song_file, style):
-    p = returnNewFigure()
     # read audio samples
-    input_data = read("bugs_left_turn.wav")
+    input_data = read(song_file)
     audio = input_data[1]
     # apply a Hanning window
     window = hann(1024)
@@ -56,23 +46,15 @@ def plotAudioHanningWindow(song_file, style):
     x = []
     x.extend(range(0, len(mags)))
 
-    #create lines.html
-    output_file("Audio.html", title="Signal Wave")
+    showPlot("Hanning Window", style["color"], x, mags)
 
-
-    # add a line renderer with legend and line thickness
-    p.line(x, mags, line_width=2)
-
-    # show the results
-    show(p)
 
 
 #################################################
 
 #################################################
 def plotAudioNormalizedFFT(song_file, style):
-    p = returnNewFigure()
-    input_data = read("bugs_left_turn.wav")
+    input_data = read(song_file)
     audio = input_data[1]
     # read in sound file; get first 1024 samples
     duration = len(audio)
@@ -86,40 +68,27 @@ def plotAudioNormalizedFFT(song_file, style):
     x = []
     x.extend(range(1, len(Y)))
 
-    # create lines.html
-    output_file("Audio.html", title="Signal Wave")
-
-
-    # add a line renderer with legend and line thickness
-    p.line(x, abs(Y), line_width=2)
-
-    # show the results
-    show(p)
+    showPlot("Normalized FFT", style["color"], x, abs(Y))
 
 
 #################################################
 
 #################################################
 def plotAudioMagnitudeValues(song_file, style):
-    p = returnNewFigure()
-
     # read in sound file; get first 1024 samples
-    input_data = read("bugs_left_turn.wav")
+    input_data = read(song_file)
     audio = input_data[1]
 
     # compute and normalize magnitude values
     magnitudeValues = abs(rfft(audio))  # fft
     magnitudeValues = 20 * scipy.log10(magnitudeValues)  # convert to a decibel scale
     magnitudeValues -= max(magnitudeValues)  # normalize to have a maximum value of 0 dB
+    magnitudeValues = magnitudeValues[1:]
 
     x = []
     x.extend(range(0,len(magnitudeValues)))
 
-    # add a line renderer with legend and line thickness
-    p.line(x, magnitudeValues, line_width=2)
-
-    # show the results
-    show(p)
+    showPlot("Magnitude Values", style["color"], x, magnitudeValues)
 
 
 
