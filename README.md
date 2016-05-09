@@ -12,8 +12,8 @@ Our group intends to utilize Python libraries to build a program that takes in a
 1.  Research Python Libraries
   1.  scipy: to read in sound files
   2.  numpy: to manipulate/analyze sound data
-  3.  matplotlib: to execute data visualization processes
-  4.  ???: to implement GUI
+  3.  Bokeh: to execute data visualization processes
+  4.  Tkinter: to implement GUI
   5.  [...]
 
 2.  Development
@@ -23,7 +23,7 @@ Our group intends to utilize Python libraries to build a program that takes in a
     * Fast Fourier Transform (FFT)
     * [...]
   3.  Visualize the data.
-    * matplotlib
+    * Bokeh
 
 3.  Testing
   1.  Experiment with different audio files (i.e., hard-coded sound file versus user-defined sound file)

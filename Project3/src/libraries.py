@@ -12,8 +12,6 @@ import sys
 
 from bokeh.plotting import figure, output_file, show
 from bokeh.charts import Scatter, output_file, show
-from scipy.io.wavfile import read
 from bokeh.io import vform
 from bokeh.models import CustomJS, ColumnDataSource, Slider
 
-import re
