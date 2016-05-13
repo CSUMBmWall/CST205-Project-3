@@ -35,4 +35,3 @@ Our group utilized Python's matplotlib and Bokeh libraries to build a program th
 ##DEMONSTRATION
 ![ScreenShot](http://i64.tinypic.com/2hqvskp.png)
 ![ScreenShot](http://i65.tinypic.com/200480j.png)
-
