@@ -2,7 +2,7 @@ import Tkinter as tk
 from Tkinter import *
 from Tkinter import Canvas
 
-from sound_analysis import *
+from sound_analysis_matplotlib import *
 
 #----------------------------------------#
 #----------FONT CUSTOM INFO--------------#
