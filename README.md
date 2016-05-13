@@ -33,6 +33,6 @@ Our group utilized Python's matplotlib and Bokeh libraries to build a program th
   3.  Test different user inputs (e.g., choose from different visualization effects)
 
 ##DEMONSTRATION
-![ScreenShot](http://i63.tinypic.com/ml0zsm.png)
+![ScreenShot](http://i64.tinypic.com/2hqvskp.png)
 ![ScreenShot](http://i65.tinypic.com/200480j.png)
 
