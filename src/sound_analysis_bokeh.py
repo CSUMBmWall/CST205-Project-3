@@ -77,7 +77,7 @@ def returnNewFigure(title):
 
 #################################################
 def showBokeh(title, style, x, y):
-    output_file("Audio.html", title=title)
+    output_file("bokeh_audio_plot.html", title=title)
     p = returnNewFigure(title)
     
     color_string = style[0]
