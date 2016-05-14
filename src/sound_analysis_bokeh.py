@@ -99,31 +99,27 @@ def returnNewFigure(title):
 def showBokeh(title, style, x, y):
     output_file("Audio.html", title=title)
 
-    print style
+    color_string = style[0]
 
     colorDict = {"c": "cyan", "m": "magenta", "g": "green", "b": "black"}
-    color = colorDict[style["color"]]
+    color = colorDict[color_string]
+
     p = returnNewFigure(title)
 
+    shape = style[1]
+    if shape == "*":
+        p.asterisk(x, y, line_width=2, color=color, fill_color="black", size=6)
 
-    if style["shape"] == "s":
-        p.square(x, y, line_width=2, color=color, fill_color="black", size=6)
-
-    if style["shape"] == "--":
+    if shape == "-":
         p.line(x,y, line_width=2, line_color=color,)
 
-    if style["shape"] == "o":
+    if shape == "o":
         p.circle(x, y, line_width=2, color=color, fill_color="black", size=6)
 
-    if style["shape"] == "v":
+    if shape == ",":
         p.triangle(x, y, line_width=2, color=color, fill_color="black", size=6)
 
     show(p)
 
-def showMatPlotLib(title, style, x):
-    plt.title(title)
-    style_string = style["color"] + style["shape"]
-    plt.plot(x, style_string)
-    plt.show()
 
 	#################################################
