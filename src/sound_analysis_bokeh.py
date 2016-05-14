@@ -98,13 +98,11 @@ def returnNewFigure(title):
 
 def showBokeh(title, style, x, y):
     output_file("Audio.html", title=title)
-
+    p = returnNewFigure(title)
+    
     color_string = style[0]
-
     colorDict = {"c": "cyan", "m": "magenta", "g": "green", "b": "black"}
     color = colorDict[color_string]
-
-    p = returnNewFigure(title)
 
     shape = style[1]
     if shape == "*":
@@ -120,6 +118,5 @@ def showBokeh(title, style, x, y):
         p.triangle(x, y, line_width=2, color=color, fill_color="black", size=6)
 
     show(p)
-
 
 	#################################################
