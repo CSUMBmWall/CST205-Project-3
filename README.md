@@ -4,6 +4,7 @@
   1. Chanel Aquino (github.com/ChanelAquino)
   2. Matt Wall (github.com/CSUMBmWall)
   3. Samba Diallo (github.com/SambaDialloB)
+  * Link: https://github.com/CSUMBmWall/CST205-Project-3
 
 ##OBJECTIVE 
 Our group utilized Python's matplotlib and Bokeh libraries to build a program that takes in an audio/sound files, analyzes its characteristics (e.g., signal wave, with hanning window, magnitude values, and normalized with Fast Fourier Transform), and creates a visually appealing representation of these analyses. The Tkinter module was also implemented to create a Graphical User Interface (GUI).
